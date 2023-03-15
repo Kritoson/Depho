@@ -11,19 +11,24 @@ while True:
             _, frame = cap.read()
             hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
+
+            q.put(frame)
+            b.put(hsv)
+    def task2(q, b):
+            frame=q.get()
+            hsv = b.get()
             lower_red = np.array([0, 100, 100])
             upper_red = np.array([10, 255, 255])
             mask = cv2.inRange(hsv, lower_red, upper_red)
 
-            _,contours,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            q.put(frame)
-            b.put(contours)
+            contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 
-    def task2(q,b):
 
-            frame=q.get()
-            contours = b.get()
+
+
+
+
             for contour in contours:
                 if cv2.contourArea(contour) < 500:
                     continue
@@ -36,7 +41,7 @@ while True:
                     cv2.circle(frame, center, 3, (0, 255, 0), -1)
                     cv2.putText(frame, "({}, {})".format(center[0], center[1]), (center[0] + 10, center[1] + 10),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                    print("Cicle Detected!!!")
+                    print("Cicle Detected!!!",center)
                 else:
                     if len(contour) >= 5:
                         ellipse = cv2.fitEllipse(contour)
@@ -46,7 +51,7 @@ while True:
                         cv2.putText(frame, "({}, {})".format(int(center[0]), int(center[1])),
                                     (int(center[0]) + 10, int(center[1]) + 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
-            cv2.imshow("Frame", frame)
+            #cv2.imshow("Frame", frame)
 
 
 
