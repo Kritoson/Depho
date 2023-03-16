@@ -1,6 +1,6 @@
 import serial
 
-ser = serial.Serial('/dev/ttyS1', 9600) # replace ttyS1 with the appropriate serial port
+ser = serial.Serial('/dev/tty*', 9600) # replace ttyS1 with the appropriate serial port
 ser.write(b'Hello Raspberry Pi!\n')
 response = ser.readline()
 print(response)
