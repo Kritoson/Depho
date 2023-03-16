@@ -19,7 +19,7 @@ while True:
         if cv2.contourArea(contour) < 500:
             continue
         (x, y), radius = cv2.minEnclosingCircle(contour)
-        center = str((int(x), int(y)))
+        center = str((int(x), int(y))).encode('utf-8')
         radius = int(radius)
         if radius > 10:
             cv2.circle(frame, center, radius, (0, 0, 255), 2)
