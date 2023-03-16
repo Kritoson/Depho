@@ -4,6 +4,7 @@ import serial
 
 cap = cv2.VideoCapture('rtsp://admin:123456@192.168.1.237/H264?ch=1&subtype=0')
 ser = serial.Serial('/dev/ttymxc0', 115200) # replace ttyS1 with the appropriate serial port
+message = ''
 
 while True:
     _, frame = cap.read()
@@ -18,7 +19,7 @@ while True:
         if cv2.contourArea(contour) < 500:
             continue
         (x, y), radius = cv2.minEnclosingCircle(contour)
-        center = (int(x), int(y))
+        center = str((int(x), int(y)))
         radius = int(radius)
         if radius > 10:
             cv2.circle(frame, center, radius, (0, 0, 255), 2)
