@@ -9,11 +9,11 @@ ser = serial.Serial('/dev/ttymxc0', 115200) # replace ttyS1 with the appropriate
 message = ''
 
 
-def send_data(i,k):
+def send_data(a,b):
     #package = b''
 
     #for i in cor:
-    package += struct.pack('i', i, k)
+    package = struct.pack('i', a, b)
     print(package)
 
     # Sent string value,but if tests shows us it is wrong turn it on btye
@@ -44,7 +44,9 @@ while True:
           #  2.putText(frame, "({}, {})".format(center[0], center[1]), (center[0] + 10, center[1] + 10),
           #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             #ser.write(center)
-            send_data(int(x),int(y))
+            xx = int(x)
+            yy = int(y)
+            send_data(xx,yy)
               
   
         else:
