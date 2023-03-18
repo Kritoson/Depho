@@ -1,3 +1,5 @@
+import serial
+
 ser = serial.Serial('/dev/ttymxc0', 115200) # replace ttyS1 with the appropriate serial port
 message = ''
 
