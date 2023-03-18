@@ -5,7 +5,7 @@ import struct
 import time
 print("start")
 cap = cv2.VideoCapture('rtsp://admin:123456@192.168.1.237/H264?ch=1&subtype=0')
-ser = serial.Serial('/dev/ttymxc0', 115200, timeout=1) # replace ttyS1 with the appropriate serial port
+ser = serial.Serial('/dev/ttymxc0', 115200, timeout=None) # replace ttyS1 with the appropriate serial port
 message = ''
 
 
@@ -20,7 +20,7 @@ def send_data(a,b):
     ser.write(package)
 
     # Do nothing for 500 milliseconds (0.5 seconds)
-    time.sleep(1)
+    #time.sleep(1)
 
     
 while True:
