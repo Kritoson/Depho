@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import serial
+import struct
 print("start")
 cap = cv2.VideoCapture('rtsp://admin:123456@192.168.1.237/H264?ch=1&subtype=0')
 ser = serial.Serial('/dev/ttymxc0', 115200) # replace ttyS1 with the appropriate serial port
