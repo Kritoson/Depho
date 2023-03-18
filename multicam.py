@@ -13,8 +13,8 @@ def send_data(i,k):
     #package = b''
 
     #for i in cor:
-        package += struct.pack('i', i, k)
-        print(package)
+    package += struct.pack('i', i, k)
+    print(package)
 
     # Sent string value,but if tests shows us it is wrong turn it on btye
     ser.write(package)
