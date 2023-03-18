@@ -16,7 +16,7 @@ def send_data(cor):
         print(package)
 
     # Sent string value,but if tests shows us it is wrong turn it on btye
-    ser.write(package.encode('utf-8'))
+    ser.write(package)
 
     # Do nothing for 500 milliseconds (0.5 seconds)
     time.sleep(0.5)
