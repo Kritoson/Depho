@@ -13,7 +13,7 @@ def send_data(a,b):
     #package = b''
 
     #for i in cor:
-    package = struct.pack('i', a, b)
+    package = struct.pack('ii', a, b)
     print(package)
 
     # Sent string value,but if tests shows us it is wrong turn it on btye
