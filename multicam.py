@@ -20,7 +20,7 @@ def send_data(a,b):
     ser.write(package)
 
     # Do nothing for 500 milliseconds (0.5 seconds)
-    #time.sleep(1)
+    time.sleep(0.5)
 
     
 while True:
