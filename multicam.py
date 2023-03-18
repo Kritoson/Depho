@@ -44,9 +44,7 @@ while True:
           #  2.putText(frame, "({}, {})".format(center[0], center[1]), (center[0] + 10, center[1] + 10),
           #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             #ser.write(center)
-            print(x)
-            print(y)
-            #send_data(center)
+            send_data(center)
               
   
         else:
