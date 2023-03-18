@@ -41,7 +41,7 @@ while True:
           #  v2.circle(frame, center, 3, (0, 255, 0), -1)
           #  2.putText(frame, "({}, {})".format(center[0], center[1]), (center[0] + 10, center[1] + 10),
           #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-            ser.write(center)
+            #ser.write(center)
             print(center)
               
   
