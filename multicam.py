@@ -23,7 +23,7 @@ def send_data(a,b):
     #time.sleep(0.5)
 
     
-while cap!=NULL:
+while cap!=None:
     _, frame = cap.read()
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
