@@ -3,8 +3,6 @@ import numpy as np
 import serial
 import struct
 import time
-import main
-from goto import goto, comefrom, label
 
 print("start")
 cap = cv2.VideoCapture('rtsp://admin:123456@192.168.1.237/H264?ch=1-s1?tcp&subtype=0')
@@ -27,8 +25,6 @@ def send_data(a,b):
 
     
 while True:
-    if cap == None:
-        goto *cap
     _, frame = cap.read()
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
