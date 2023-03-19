@@ -23,9 +23,8 @@ def send_data(a,b):
     #time.sleep(0.5)
 
     
-while True:
+while cap!=NULL:
     _, frame = cap.read()
-    cv2.waitKey(int(cv2.VideoCapture.grab()))
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     lower_red = np.array([0, 100, 100])
