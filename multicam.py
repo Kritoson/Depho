@@ -4,7 +4,7 @@ import serial
 import struct
 import time
 from goto import goto, comefrom, label
-label:
+label:do
 print("start")
 cap = cv2.VideoCapture('rtsp://admin:123456@192.168.1.237/H264?ch=1-s1?tcp&subtype=0')
 ser = serial.Serial('/dev/ttymxc0', 115200, timeout=None) # replace ttyS1 with the appropriate serial port
