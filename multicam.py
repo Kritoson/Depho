@@ -3,6 +3,7 @@ import numpy as np
 import serial
 import struct
 import time
+import main
 from goto import goto, comefrom, label
 
 print("start")
