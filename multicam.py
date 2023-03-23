@@ -26,6 +26,7 @@ def send_data(a,b):
     
 while True:
     _, frame = cap.read()
+    frame = cv2.flip(frame, 1)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     lower_red = np.array([0, 100, 100])
