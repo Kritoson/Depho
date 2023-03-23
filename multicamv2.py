@@ -27,7 +27,7 @@ def send_data(a,b):
 
     
 while True:
-    _, frame = cap.read()
+    ret, frame = cap.read()
     if not ret:
        print("Kameradan görüntü alınamadı")
        break
