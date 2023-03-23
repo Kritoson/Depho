@@ -28,6 +28,10 @@ def send_data(a,b):
     
 while True:
     _, frame = cap.read()
+    if not ret:
+       print("Kameradan görüntü alınamadı")
+       break
+    frame = cv2.flip(frame, 1)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     lower_red = np.array([0, 100, 100])
@@ -69,3 +73,6 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+else:
+   print("Bağlantı Başarısız, tekrar deneyecek")
+   time.sleep(3)
